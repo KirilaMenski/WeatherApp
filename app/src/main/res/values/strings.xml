@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">KotlinWeatherApp</string>
+    <string name="weather">Weather</string>
+    <string name="choice_city">Choice City</string>
+    <string name="settings">Settings</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+</resources>
