@@ -1,14 +1,18 @@
 <resources>
     <string name="app_name">KotlinWeatherApp</string>
+    <string name="api_key">6682c14b913c161756463200a81ce3b5</string>
     <string name="weather">Weather</string>
     <string name="choice_city">Choice City</string>
     <string name="settings">Settings</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
-    <string name="temperature_morning">Morning, &#x2103;: %d</string>
-    <string name="temperature_day">Day, &#x2103;: %d</string>
-    <string name="temperature_evening">Evening, &#x2103;: %d</string>
-    <string name="pressure">Pressure: %d</string>
-    <string name="humidity">Humidity: %d</string>
-    <string name="wind">Wind: %d</string>
+    <string name="temperature_morning">Morning, &#x2103;: %f</string>
+    <string name="temperature_day">Day, &#x2103;: %f</string>
+    <string name="temperature_evening">Evening, &#x2103;: %f</string>
+    <string name="temperature">Temp, &#x2103;: %f</string>
+    <string name="min">Min, &#x2103;: %f</string>
+    <string name="max">Max, &#x2103;: %f</string>
+    <string name="pressure">Pressure: %f</string>
+    <string name="humidity">Humidity: %f</string>
+    <string name="wind">Wind: %f</string>
 </resources>

@@ -35,10 +35,10 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/morning_temp"
+                android:id="@+id/temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/temperature_morning"
+                android:text="@string/temperature"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/description_text_size"/>
 
@@ -47,10 +47,10 @@
                 android:layout_height="@dimen/space_between_desc"/>
 
             <TextView
-                android:id="@+id/day_temp"
+                android:id="@+id/min_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/temperature_day"
+                android:text="@string/min"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/description_text_size"/>
 
@@ -59,10 +59,10 @@
                 android:layout_height="@dimen/space_between_desc"/>
 
             <TextView
-                android:id="@+id/evening_temp"
+                android:id="@+id/max_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/temperature_evening"
+                android:text="@string/max"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/description_text_size"/>
 

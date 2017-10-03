@@ -29,6 +29,6 @@ class WeatherAdapter : FragmentStatePagerAdapter {
         return WeatherFragment.newInstance(args)
     }
 
-    override fun getCount(): Int = 10
+    override fun getCount(): Int = 1
 
 }

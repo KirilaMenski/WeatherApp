@@ -37,13 +37,9 @@ class WeatherPager : Fragment() {
 
     private val weatherAdapter: FragmentStatePagerAdapter
         get() = object : FragmentStatePagerAdapter(childFragmentManager) {
-            override fun getItem(position: Int): Fragment {
-                val args = Bundle()
-                args.putInt("position", position)
-                return WeatherFragment.newInstance(args)
-            }
+            override fun getItem(position: Int): Fragment = WeatherFragment.newInstance(Bundle())
 
-            override fun getCount(): Int = 10
+            override fun getCount(): Int = 1
 
         }
 
