@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit
 /**
  * Created by kirill on 2.10.17.
  */
-class Splash : AppCompatActivity() {
+class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,9 +20,8 @@ class Splash : AppCompatActivity() {
         val observable: Observable<String> = Observable.just("").delay(1000, TimeUnit.MILLISECONDS);
         observable.subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({ }, { e -> Log.e("App", "Error " + e) }) {
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
+                .subscribe({ }, { }) {
+                    startActivity(Intent(this, MainActivity::class.java))
                 }
 
     }

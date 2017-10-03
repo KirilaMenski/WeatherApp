@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".ui.activities.Splash"
+            android:name=".ui.activities.SplashActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar.Splash">
             <intent-filter>
