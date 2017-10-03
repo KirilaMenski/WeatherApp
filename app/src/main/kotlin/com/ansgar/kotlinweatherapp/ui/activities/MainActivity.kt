@@ -14,6 +14,7 @@ import com.ansgar.kotlinweatherapp.enums.FragmentEnum
 import com.ansgar.kotlinweatherapp.ui.fragments.ChoiceCityFragment
 import com.ansgar.kotlinweatherapp.ui.fragments.SettingsFragment
 import com.ansgar.kotlinweatherapp.ui.fragments.WeatherFragment
+import com.ansgar.kotlinweatherapp.ui.fragments.WeatherPager
 import com.ansgar.kotlinweatherapp.utils.closeFragment
 import com.ansgar.kotlinweatherapp.utils.replaceFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onDrawerClosed(drawerView: View?) {
 
         val fragment: Fragment = when (mCurrentFragmentEnum) {
-            FragmentEnum.WEATHER_FRAGMENT -> WeatherFragment.newInstance(Bundle())
+            FragmentEnum.WEATHER_PAGER -> WeatherPager.newInstance(Bundle())
             FragmentEnum.CHOICE_CITY_FRAGMENT -> ChoiceCityFragment.newInstance(Bundle())
             FragmentEnum.SETTINGS_FRAGMENT -> SettingsFragment.newInstance(Bundle())
             else -> WeatherFragment()
@@ -72,10 +73,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         mCurrentFragmentEnum = when (item.itemId) {
-            R.id.weathers -> FragmentEnum.WEATHER_FRAGMENT
+            R.id.weathers -> FragmentEnum.WEATHER_PAGER
             R.id.settings -> FragmentEnum.SETTINGS_FRAGMENT
             R.id.choose_city -> FragmentEnum.CHOICE_CITY_FRAGMENT
-            else -> FragmentEnum.WEATHER_FRAGMENT
+            else -> FragmentEnum.WEATHER_PAGER
         }
 
         drawer_layout.closeDrawers()
@@ -102,7 +103,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.addDrawerListener(this)
         nav_view.setNavigationItemSelectedListener(this)
 
-        val fragment = WeatherFragment.newInstance(Bundle())
+        val fragment = WeatherPager.newInstance(Bundle())
         replaceFragment(R.id.main_fragment_container, fragment, fragment.toString(), false)
 
     }
