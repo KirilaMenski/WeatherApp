@@ -9,10 +9,10 @@
     <string name="temperature_morning">Morning, &#x2103;: %f</string>
     <string name="temperature_day">Day, &#x2103;: %f</string>
     <string name="temperature_evening">Evening, &#x2103;: %f</string>
-    <string name="temperature">Temp, &#x2103;: %f</string>
-    <string name="min">Min, &#x2103;: %f</string>
-    <string name="max">Max, &#x2103;: %f</string>
-    <string name="pressure">Pressure: %f</string>
-    <string name="humidity">Humidity: %f</string>
-    <string name="wind">Wind: %f</string>
+    <string name="temperature">Temp, &#x2103;: %.2f</string>
+    <string name="min">Min, &#x2103;: %.2f</string>
+    <string name="max">Max, &#x2103;: %.2f</string>
+    <string name="pressure">Pressure: %.2f</string>
+    <string name="humidity">Humidity: %.2f</string>
+    <string name="wind">Wind: %.2f</string>
 </resources>

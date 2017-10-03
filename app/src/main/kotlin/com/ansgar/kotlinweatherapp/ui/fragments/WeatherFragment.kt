@@ -1,6 +1,5 @@
 package com.ansgar.kotlinweatherapp.ui.fragments
 
-import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -60,10 +59,9 @@ class WeatherFragment : Fragment(), WeatherFragmentView {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view: View = inflater!!.inflate(R.layout.fragment_weather, container, false)
-        return view
-    }
+    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? =
+            inflater!!.inflate(R.layout.fragment_weather, container, false)
 
     override fun onStart() {
         super.onStart()

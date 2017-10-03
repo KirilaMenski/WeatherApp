@@ -31,9 +31,9 @@ class WeatherFragmentPresenter(var view: WeatherFragmentView) {
                 view.setCity(city)
                 view.setHumidity(humidity)
                 view.setWindSpeed(speed)
-                view.setTemp(temp)
-                view.setMax(max)
-                view.setMin(min)
+                view.setTemp(temp - 273)
+                view.setMax(max - 273)
+                view.setMin(min - 273)
                 view.setPressure(pressure)
                 view.setIcon(Uri.parse("http://openweathermap.org/img/w/$icon.png"))
             }
@@ -42,15 +42,15 @@ class WeatherFragmentPresenter(var view: WeatherFragmentView) {
                 Log.e("WeatherFragment", "", e)
             }
 
-            override fun onNext(t: CurrentWeatherResponse?) {
-                city = t?.name!!
-                humidity = t.main.humidity
-                speed = t.windResponse.speed
-                temp = t.main.temp
-                max = t.main.max
-                min = t.main.min
-                pressure = t.main.pressure
-                icon = t.weatherDescription[0].icon
+            override fun onNext(weatherResponse: CurrentWeatherResponse?) {
+                city = weatherResponse?.name!!
+                humidity = weatherResponse.main.humidity
+                speed = weatherResponse.windResponse.speed
+                temp = weatherResponse.main.temp
+                max = weatherResponse.main.max
+                min = weatherResponse.main.min
+                pressure = weatherResponse.main.pressure
+                icon = weatherResponse.weatherDescription[0].icon
             }
 
         }
