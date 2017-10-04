@@ -1,12 +1,12 @@
 package com.ansgar.kotlinweatherapp.ui.views
 
-import android.content.Context
 import android.net.Uri
+import com.ansgar.kotlinweatherapp.ui.base.BaseContext
 
 /**
  * Created by kirill on 2.10.17.
  */
-interface WeatherFragmentView {
+interface WeatherFragmentView : BaseContext {
 
     fun setCity(city: String)
 
@@ -18,10 +18,10 @@ interface WeatherFragmentView {
 
     fun setMax(max: Double)
 
-    fun setPressure(pressure:Double)
+    fun setPressure(pressure: Double)
 
     fun setHumidity(humidity: Double)
 
-    fun setWindSpeed(speed:Double)
+    fun setWindSpeed(speed: Double)
 
 }

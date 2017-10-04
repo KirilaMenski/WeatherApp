@@ -22,6 +22,7 @@ class SplashActivity : AppCompatActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ }, { }) {
                     startActivity(Intent(this, MainActivity::class.java))
+                    finish()
                 }
 
     }

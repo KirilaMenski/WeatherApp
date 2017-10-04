@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="nav_header_width">150dp</dimen>
+    <dimen name="nav_header_width">160dp</dimen>
     <dimen name="toolbar_size">50dp</dimen>
     <dimen name="progress_bar_size">50dp</dimen>
     <dimen name="main_padding">10dp</dimen>
