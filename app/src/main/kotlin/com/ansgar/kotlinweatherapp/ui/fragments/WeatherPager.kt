@@ -7,14 +7,34 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ansgar.kotlinweatherapp.R
+import com.ansgar.kotlinweatherapp.model.CityModel
 import com.ansgar.kotlinweatherapp.ui.adapter.WeatherAdapter
+import com.ansgar.kotlinweatherapp.ui.presenters.WeatherPagerPresenter
+import com.ansgar.kotlinweatherapp.ui.views.WeatherPagerView
 import kotlinx.android.synthetic.main.fragment_weather.*
 import kotlinx.android.synthetic.main.pager_weather.*
 
 /**
  * Created by kirill on 3.10.17.
  */
-class WeatherPager : Fragment() {
+class WeatherPager : Fragment(), WeatherPagerView {
+
+    override fun updateAdapter(cityModels: List<CityModel>) {
+        weather_view_pager.adapter = object : FragmentStatePagerAdapter(childFragmentManager) {
+
+            override fun getItem(position: Int): Fragment {
+                val args = Bundle()
+                args.putInt(WeatherFragment.EXTRA_ID, cityModels[position].id)
+
+                return WeatherFragment.newInstance(args)
+            }
+
+            override fun getCount(): Int = cityModels.size
+
+        }
+    }
+
+    var mPresenter = WeatherPagerPresenter(this)
 
     companion object {
         fun newInstance(bundle: Bundle): WeatherPager {
@@ -31,15 +51,7 @@ class WeatherPager : Fragment() {
     override fun onStart() {
         super.onStart()
 //        weather_view_pager.adapter = WeatherAdapter(childFragmentManager)
-        weather_view_pager.adapter = weatherAdapter
+        mPresenter.getCities()
     }
-
-    private val weatherAdapter: FragmentStatePagerAdapter
-        get() = object : FragmentStatePagerAdapter(childFragmentManager) {
-            override fun getItem(position: Int): Fragment = WeatherFragment.newInstance(Bundle())
-
-            override fun getCount(): Int = 1
-
-        }
 
 }

@@ -1,7 +1,6 @@
 package com.ansgar.kotlinweatherapp.ui.presenters
 
-import android.util.Log
-import com.ansgar.kotlinweatherapp.model.City
+import android.util.Log.*
 import com.ansgar.kotlinweatherapp.model.CityModel
 import com.ansgar.kotlinweatherapp.ui.views.ChoiceCityFragmentView
 import rx.Observable
@@ -21,15 +20,16 @@ class ChoiceCityFragmentPresenter(var view: ChoiceCityFragmentView) {
         val observable: Observable<CityModel> = getList(assetsInputStream)
         val observer: Observer<CityModel> = object : Observer<CityModel> {
             override fun onCompleted() {
-                Log.i("!!!", "Complete")
+                view.sortList()
+                i("!!!", "Complete")
             }
 
             override fun onError(e: Throwable?) {
-                Log.e("!!!", "Error", e)
+                e("!!!", "Error", e)
             }
 
             override fun onNext(t: CityModel?) {
-                Log.i("!!!", "City: " + t.toString())
+                view.updateList(t!!)
             }
         }
 

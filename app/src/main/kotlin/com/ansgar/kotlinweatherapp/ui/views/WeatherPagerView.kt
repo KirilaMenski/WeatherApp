@@ -4,12 +4,10 @@ import com.ansgar.kotlinweatherapp.model.CityModel
 import com.ansgar.kotlinweatherapp.ui.base.BaseContext
 
 /**
- * Created by kirill on 16.10.17.
+ * Created by kirill on 17.10.17.
  */
-interface ChoiceCityFragmentView : BaseContext {
+interface WeatherPagerView : BaseContext {
 
-    fun updateList(cityModel: CityModel)
-
-    fun sortList()
+    fun updateAdapter(cityModels: List<CityModel>)
 
 }

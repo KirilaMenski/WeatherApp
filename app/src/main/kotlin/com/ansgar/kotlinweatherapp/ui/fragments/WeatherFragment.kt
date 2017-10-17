@@ -57,15 +57,23 @@ class WeatherFragment : Fragment(), WeatherFragmentView {
             fragment.arguments = bundle
             return fragment
         }
+
+        val EXTRA_ID: String = "com.ansgar.kotlinweatherapp.ui.fragments.city_id"
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? =
-            inflater!!.inflate(R.layout.fragment_weather, container, false)
+                              savedInstanceState: Bundle?): View? {
+
+        val cityId = arguments.getInt(EXTRA_ID)
+        presenter.getCurrentWeather(cityId, getString(R.string.api_key))
+
+        return inflater!!.inflate(R.layout.fragment_weather, container, false)
+    }
+
 
     override fun onStart() {
         super.onStart()
-        presenter.getCurrentWeather(625144, getString(R.string.api_key))
+//        presenter.getCurrentWeather(625144, getString(R.string.api_key))
     }
 
     override fun toString(): String = WeatherFragment::class.java.simpleName
