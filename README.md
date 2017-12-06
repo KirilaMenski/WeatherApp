@@ -1,1 +1,1 @@
-Prived, krevedko.
+
