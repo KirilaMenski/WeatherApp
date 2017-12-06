@@ -1,1 +1,1 @@
-Prived, medved. QWEQWEQWEQWEQWEQWEWQ
+Prived, krevedko.
